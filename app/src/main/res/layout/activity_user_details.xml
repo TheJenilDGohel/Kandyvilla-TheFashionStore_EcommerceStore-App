@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".admin.activities.UserDetailsActivity">
+
+    <RelativeLayout
+        android:id="@+id/custombar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txtviewall"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/heavypink"
+            android:gravity="center"
+            android:text="@string/user_data"
+            android:textColor="@color/white"
+            android:textSize="22dp"></TextView>
+
+        <ImageView
+            android:id="@+id/backbuttonallusers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="18dp"
+            android:src="@drawable/ic_baseline_arrow_back_ios_24" />
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/userdata"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/custombar"
+        android:layout_marginTop="3dp"
+        android:padding="5dp"
+        android:layout_margin="5dp"
+        />
+
+
+
+</RelativeLayout>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="10dp"
+    android:background="@color/rosewhite"
+    app:cardUseCompatPadding="true"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/product_img"
+            android:layout_width="120dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="5dp"
+            android:padding="10sp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/product"
+            app:civ_border_color="@color/black"
+            app:riv_corner_radius="7dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginStart="7dp"
+            android:layout_margin="5dp"
+            >
+
+            <TextView
+                android:id="@+id/product_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Product Name : Jenil Dineshbhai Gohel"
+                android:textColor="@color/indianred"
+                android:textAlignment="viewStart"
+                android:fontFamily="@font/bellezaregular"
+                android:textStyle="bold"
+                android:maxLines="2"
+                android:textSize="15dp"
+                />
+
+            <TextView
+                android:id="@+id/product_date"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date : 12/12/2012"
+                android:fontFamily="@font/bellezaregular"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/producttotalprice"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Price : 200"
+                style="@style/TextAppearance.Material3.BodyLarge"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/product_qty"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Quantity : 2"
+                style="@style/TextAppearance.Material3.BodyLarge"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/product_size"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Size : XL - Extra Large"
+                style="@style/TextAppearance.Material3.BodyLarge"
+                android:textStyle="bold"
+                />
+            <LinearLayout
+                android:gravity="end"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+                <ImageButton
+                    android:id="@+id/cancel_order"
+                    android:layout_gravity="bottom"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="10sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:src="@drawable/ic_baseline_cancel_24"
+                    android:background="@drawable/dropdown_bg"
+                    />
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

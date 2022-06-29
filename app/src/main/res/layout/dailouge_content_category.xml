@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/TextAppearance.Material3.BodyLarge"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/heavypink"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/update_product"
+            android:textColor="@color/white"
+            android:textSize="25dp" />
+
+        <EditText
+            android:id="@+id/edit_categoryname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title"
+            android:layout_marginTop="10dp"
+            android:drawableStart="@drawable/ic_baseline_edit_note_24"
+            android:drawablePadding="10dp"
+            android:hint="@string/product_name"
+            android:textColorHint="@color/indianred"
+            android:textSize="15dp" />
+        <EditText
+            android:layout_below="@id/edit_categoryname"
+            android:id="@+id/edit_categorydesc"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/description"
+            android:drawableStart="@drawable/ic_baseline_edit_note_24"
+            android:drawablePadding="10dp"
+            android:textColorHint="@color/indianred"
+            android:textSize="15dp"
+            />
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_marginTop="5dp"
+            android:id="@+id/spinnerlayout"
+            android:layout_below="@id/edit_categorydesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="5dp"
+            >
+
+            <Spinner
+                android:id="@+id/edit_categorytype"
+                android:layout_width="130dp"
+                android:layout_height="30dp"
+                android:layout_below="@id/edit_productrating"
+                android:layout_centerInParent="true"
+                android:background="@drawable/dropdown_bg"
+                android:backgroundTint="@color/black"
+                android:spinnerMode="dropdown"
+                android:layout_weight="2"
+                android:layout_margin="10dp"
+                android:textAlignment="center" />
+
+            <Spinner
+                android:id="@+id/edit_productcategory"
+                android:layout_width="130dp"
+                android:layout_height="30dp"
+                android:layout_weight="2"
+                android:layout_margin="10dp"
+                android:layout_below="@id/edit_categorytype"
+                android:layout_centerInParent="true"
+                android:background="@drawable/dropdown_bg"
+                android:backgroundTint="@color/black"
+                android:spinnerMode="dropdown"
+                android:textAlignment="center" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <Button
+            android:id="@+id/edit_productsubmit"
+            style="@style/TextAppearance.Material3.BodyLarge"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/spinnerlayout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:text="Update"
+            android:textAllCaps="true"
+            android:textColor="@color/white" />
+
+    </RelativeLayout>
+</RelativeLayout>

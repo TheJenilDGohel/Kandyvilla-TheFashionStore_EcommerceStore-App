@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "72866589623",
+    "firebase_url": "https://kandyvilla-the-fashion-s-6ec3c-default-rtdb.firebaseio.com",
+    "project_id": "kandyvilla-the-fashion-s-6ec3c",
+    "storage_bucket": "kandyvilla-the-fashion-s-6ec3c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:72866589623:android:8623954560454b0e399632",
+        "android_client_info": {
+          "package_name": "com.kandyvilla.kandyvillathefashionstore"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "72866589623-vuo5u945ge745c23lu7fehffaqlj3vom.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKTyXZc4x4YIWeid10xli2ruC3sVG1fxk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "72866589623-vuo5u945ge745c23lu7fehffaqlj3vom.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".admin.activities.AllProductsAddActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/custombar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txtviewall"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@color/heavypink"
+                android:gravity="center"
+                android:text="@string/add_new_product"
+                android:textColor="@color/white"
+                android:textSize="22dp"></TextView>
+
+            <ImageView
+                android:id="@+id/backbuttonpopularproducts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="18dp"
+                android:src="@drawable/ic_baseline_arrow_back_ios_24" />
+        </RelativeLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_below="@+id/custombar"
+            android:layout_margin="10dp"
+            android:layout_centerInParent="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cardCornerRadius="17dp"
+            app:cardBackgroundColor="@color/rosewhite">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/popularproductsimg"
+                    android:layout_width="200dp"
+                    android:layout_height="190dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/uploadadmin"
+                    app:riv_border_color="@color/indianred"
+                    app:riv_border_width="4dp"
+                    app:riv_corner_radius="10dp" />
+
+                <EditText
+                    android:id="@+id/popularproductsaddname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/popularproductsimg"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/edittext_background"
+                    android:drawableLeft="@drawable/ic_baseline_edit_note_24"
+                    android:drawablePadding="12dp"
+                    android:fontFamily="@font/bellezaregular"
+                    android:hint="Product Name"
+                    android:inputType="text"
+                    android:padding="13dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/popularproductsdesc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/popularproductsaddname"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/edittext_background"
+                    android:drawableLeft="@drawable/ic_baseline_edit_note_24"
+                    android:drawablePadding="12dp"
+                    android:fontFamily="@font/bellezaregular"
+                    android:hint="Product Description"
+                    android:inputType="textLongMessage"
+                    android:padding="13dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/popularproductsprice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/popularproductsdesc"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/edittext_background"
+                    android:drawableLeft="@drawable/ic_baseline_edit_note_24"
+                    android:drawablePadding="12dp"
+                    android:fontFamily="@font/bellezaregular"
+                    android:hint="Product Price"
+                    android:inputType="textLongMessage"
+                    android:padding="13dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/popularproductsrating"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/popularproductsprice"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/edittext_background"
+                    android:drawableLeft="@drawable/ic_baseline_star_24"
+                    android:drawablePadding="12dp"
+                    android:fontFamily="@font/bellezaregular"
+                    android:hint="Product Rating"
+                    android:inputType="text"
+                    android:padding="13dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textSize="14sp" />
+
+                <Spinner
+                    android:id="@+id/popularproductstype"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_below="@id/popularproductsrating"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/dropdown_bg"
+                    android:backgroundTint="@color/black"
+                    android:spinnerMode="dropdown"
+                    android:textAlignment="center" />
+
+                <Spinner
+                    android:id="@+id/popularproductscategory"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_below="@id/popularproductstype"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/dropdown_bg"
+                    android:backgroundTint="@color/black"
+                    android:spinnerMode="dropdown"
+                    android:textAlignment="center" />
+
+                <EditText
+                    android:id="@+id/popularproductsdiscount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/popularproductscategory"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/edittext_background"
+                    android:drawableLeft="@drawable/ic_baseline_edit_note_24"
+                    android:drawablePadding="12dp"
+                    android:fontFamily="@font/bellezaregular"
+                    android:hint="Product Discount"
+                    android:inputType="textLongMessage"
+                    android:padding="13dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/popularproductsbtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/popularproductsdiscount"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="35dp"
+                    android:text="@string/add_product"
+                    android:textStyle="bold" />
+
+
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
+</ScrollView>

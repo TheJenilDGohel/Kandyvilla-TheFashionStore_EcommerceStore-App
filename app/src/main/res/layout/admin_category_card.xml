@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="5dp"
+    app:cardCornerRadius="15dp"
+    >
+
+    <LinearLayout
+        android:id="@+id/imagelayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:orientation="vertical"
+        >
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/nav_addcategoryimg"
+            android:layout_width="140dp"
+            app:riv_corner_radius="10dp"
+            android:layout_height="220dp"
+            android:scaleType="centerCrop"
+            app:riv_border_width="3dp"
+            android:layout_gravity="center_horizontal"
+            app:riv_border_color="@color/indianred"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/western_dress"
+            >
+        </com.makeramen.roundedimageview.RoundedImageView>
+
+        <LinearLayout
+            android:id="@+id/content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/nav_addcategoryname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Category name"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:singleLine="true"
+                android:layout_marginTop="5dp"
+                style="@style/TextAppearance.Material3.BodyLarge"
+                android:textColor="@color/indianred"
+                />
+            <TextView
+                android:id="@+id/nav_addcategorydesc"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Category Description"
+                android:layout_marginStart="10dp"
+                android:layout_gravity="start"
+                android:maxLines="3"
+                android:ellipsize="marquee"
+                style="@style/TextAppearance.Material3.BodyLarge"
+                android:textColor="@color/black"
+                />
+
+            <TextView
+                android:id="@+id/nav_addcategorytype"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Type :"
+                android:textSize="12sp"
+                android:layout_marginStart="10dp"
+                android:layout_gravity="start"
+                android:maxLines="2"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                />
+            <TextView
+                android:id="@+id/nav_addcategorycat"
+                android:layout_marginTop="3dp"
+                android:textSize="12sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Category :"
+                android:layout_marginStart="10dp"
+                android:layout_gravity="start"
+                android:maxLines="2"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <ImageButton
+                android:id="@+id/edit_category"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:src="@drawable/ic_baseline_edit_note_24"
+                android:layout_gravity="start"
+                android:background="@drawable/dropdown_bg"
+                />
+
+            <ImageButton
+                android:id="@+id/delete_category"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:src="@drawable/ic_baseline_delete_24"
+                android:layout_gravity="start"
+                android:background="@drawable/dropdown_bg"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

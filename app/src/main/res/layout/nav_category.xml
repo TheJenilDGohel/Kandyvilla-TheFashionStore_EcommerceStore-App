@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="320dp"
+    android:padding="5dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="5dp"
+    app:cardCornerRadius="15dp"
+    >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:outlineAmbientShadowColor="@color/black"
+        android:outlineSpotShadowColor="@color/black"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="4dp"
+            >
+
+            <TextView
+                android:id="@+id/nav_categoryname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/category_name"
+                android:textColor="@color/indianred"
+                android:textAlignment="viewStart"
+                android:textStyle="bold"
+                android:padding="2dp"
+                android:textSize="20dp"
+                android:layout_marginTop="2dp"
+                android:fontFamily="@font/bellezaregular">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/nav_categorydesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/description"
+                android:textColor="@color/black"
+                android:textAlignment="viewStart"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:singleLine="false"
+                android:padding="2dp"
+                android:layout_marginTop="2dp"
+                android:fontFamily="@font/bellezaregular"
+                >
+            </TextView>
+
+        </LinearLayout>
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:foregroundGravity="bottom"
+            android:id="@+id/nav_categoryimg"
+            android:layout_width="190dp"
+            android:layout_height="250dp"
+            android:scaleType="centerCrop"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/western_dress"
+            >
+        </com.makeramen.roundedimageview.RoundedImageView>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

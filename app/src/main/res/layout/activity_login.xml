@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.LoginActivity"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/log_img"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="70dp"
+        android:src="@drawable/cover"
+        android:contentDescription="@string/app_name"
+        />
+
+    <EditText
+        android:id="@+id/email_log"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/log_img"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edittext_background"
+        android:drawableLeft="@drawable/emailicon"
+        android:drawablePadding="12dp"
+        android:fontFamily="@font/bellezaregular"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:padding="13dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/password_log"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/email_log"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edittext_background"
+        android:drawableStart="@drawable/passwordicon"
+        android:drawablePadding="10dp"
+        android:fontFamily="@font/bellezaregular"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:padding="13dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="14sp" />
+
+
+    <Spinner
+        android:id="@+id/usertype"
+        android:layout_width="140dp"
+        android:layout_height="30dp"
+        android:layout_below="@id/password_log"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/dropdown_bg"
+        android:backgroundTint="@color/black"
+        android:spinnerMode="dropdown"
+        android:textAlignment="center" />
+
+    <Button
+        android:id="@+id/signinbtn_log"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/usertype"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="12dp"
+        android:backgroundTint="@color/purple_500"
+        android:fontFamily="@font/bellezaregular"
+        android:text="Signin"
+        android:textAllCaps="false"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/signupbtn_lay"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/signinbtn_log">
+
+        <TextView
+            android:id="@+id/signuptxt_de"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bellezaregular"
+            android:text="Don't Have An Account ?"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            app:layout_constraintHorizontal_bias="0.370"
+            style="@style/TextAppearance.Material3.BodyLarge"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/signuptxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bellezaregular"
+            android:text="Signup"
+            android:textColor="@color/heavypink"
+            android:textStyle="bold"
+            style="@style/TextAppearance.Material3.BodyLarge"
+            app:layout_constraintStart_toEndOf="@id/signuptxt_de"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/signupbtn_lay"
+        android:layout_marginTop="5dp"
+        >
+
+        <TextView
+            android:id="@+id/forgetpasswordtxt"
+            style="@style/TextAppearance.Material3.BodyLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:text="Forget password ?"
+            android:textSize="13dp"
+            android:textStyle="bold"
+            app:layout_constraintHorizontal_bias="0.375"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/forgetpassword"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/forgetpassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bellezaregular"
+            android:text="Click here"
+            android:textColor="@color/red"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            style="@style/TextAppearance.Material3.BodyLarge"
+            app:layout_constraintStart_toEndOf="@id/forgetpasswordtxt"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
+</ScrollView>

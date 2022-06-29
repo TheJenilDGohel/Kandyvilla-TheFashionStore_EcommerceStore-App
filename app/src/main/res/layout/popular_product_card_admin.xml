@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="5dp"
+    app:cardCornerRadius="15dp"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:layout_marginTop="5dp"
+            android:layout_width="150dp"
+            android:layout_height="230dp"
+            android:id="@+id/popularproductsimg"
+            app:riv_corner_radius="10dp"
+            app:riv_border_width="1.9dp"
+            app:riv_border_color="@color/indianred"
+            android:scaleType="centerCrop"
+            android:layout_gravity="center_horizontal"
+            android:src="@mipmap/product"
+            />
+        <TextView
+            android:id="@+id/popularproductsname"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/bellezaregular"
+            android:textSize="19sp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            android:singleLine="true"
+            android:textColor="@color/indianred"
+            android:text="popular products"/>
+        <TextView
+            android:id="@+id/popularproductsdesc"
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:fontFamily="@font/bellezaregular"
+            android:maxLines="4"
+            android:singleLine="true"
+            android:gravity="center"
+            android:text="description"
+            android:textColor="@color/black"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="4dp"
+                android:layout_width="match_parent"
+                android:layout_margin="5dp"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/price"
+                    style="@style/TextAppearance.Material3.BodyLarge"
+                    android:id="@+id/txt"
+                    />
+
+                <TextView
+                    android:id="@+id/productprice"
+                    style="@style/TextAppearance.Material3.BodyLarge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:text="2300"
+                    android:textColor="@color/indianred" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Rs"
+                    android:layout_toEndOf="@+id/productprice"
+                    />
+
+                <TextView
+                    android:id="@+id/productcategory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/productprice"
+                    android:text="Category : "
+                    android:singleLine="true"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/producttype"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/productcategory"
+                    android:text="Type : "
+                    android:singleLine="true"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/productrating"
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/producttype"
+                    android:text="Rating : " />
+
+                <TextView
+                    android:id="@+id/productdiscount"
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/productrating"
+                    android:text="Discount : " />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="bottom"
+            >
+            <ImageButton
+                android:id="@+id/edit_product"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:src="@drawable/ic_baseline_edit_note_24"
+                android:layout_gravity="start"
+                android:background="@drawable/dropdown_bg"
+                />
+
+            <ImageButton
+                android:id="@+id/delete_product"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:src="@drawable/ic_baseline_delete_24"
+                android:layout_gravity="start"
+                android:background="@drawable/dropdown_bg"
+                />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="8dp"
+    android:background="@color/rosewhite"
+    app:cardUseCompatPadding="true"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/user_img"
+            android:padding="2dp"
+            app:civ_border_color="@color/black"
+            app:civ_border_width="3dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:src="@drawable/usericon"
+            android:layout_marginStart="5dp"
+            />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="7dp"
+            android:padding="7dp"
+            >
+
+            <TextView
+                android:id="@+id/user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name : Jenil Dineshbhai Gohel"
+                android:textStyle="bold"
+                style="@style/TextAppearance.Material3.BodyLarge"
+                />
+
+            <TextView
+                android:id="@+id/user_address"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Address : sdkjgagsidmdklasudkamdajdiohasjd,sd;l;iasposdassmdansadkjhasasidiasdl"
+                style="@style/TextAppearance.Material3.BodyLarge"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/user_email"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email : j.d.gohel4200@gmail.com"
+                style="@style/TextAppearance.Material3.BodyLarge"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/user_number"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mobile : +91 8733992320"
+                style="@style/TextAppearance.Material3.BodyLarge"
+                android:textStyle="bold"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
