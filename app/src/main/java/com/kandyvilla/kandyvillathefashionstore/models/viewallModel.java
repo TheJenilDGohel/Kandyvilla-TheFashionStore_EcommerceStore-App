@@ -9,6 +9,7 @@ public class viewallModel implements Serializable {
     String discount;
     String type;
     String img_url;
+    String document_id;
     int price;
 
     public viewallModel() {
@@ -22,6 +23,14 @@ public class viewallModel implements Serializable {
         this.type = type;
         this.img_url = img_url;
         this.price = price;
+    }
+
+    public String getDocument_id() {
+        return document_id;
+    }
+
+    public void setDocument_id(String document_id) {
+        this.document_id = document_id;
     }
 
     public String getName() {

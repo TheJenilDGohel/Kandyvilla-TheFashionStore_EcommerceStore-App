@@ -53,13 +53,10 @@ public class HomeFragment extends Fragment {
         List<homecategoryModel> homecategoryModelList;
         homecategoryAdapter homecategoryAdapter;
 
-    //search box
-//        SearchView searchbox;
-    EditText searchbox;
-        private List<viewallModel> viewallModellist;
-        private RecyclerView recyclerView;
-        private viewallAdapter viewallAdapter;
-
+    SearchView searchbox;
+    private List<viewallModel> viewallModellist;
+    private RecyclerView recyclerView;
+    private viewallAdapter viewallAdapter;
 
         public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -131,99 +128,75 @@ public class HomeFragment extends Fragment {
                         }
                     });
 
-            //search items
 
-            searchbox = root.findViewById(R.id.searchbox);
-//            searchbox.clearFocus();
-            recyclerView = root.findViewById(R.id.searchbox_items);
+
+//search items
 
             viewallModellist = new ArrayList<>();
             viewallAdapter = new viewallAdapter(getContext(),viewallModellist);
-            recyclerView.setLayoutManager(new GridLayoutManager(getActivity(),2));
-            recyclerView.setAdapter(viewallAdapter);
-            recyclerView.setHasFixedSize(true);
 
-//            searchbox.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-//                @Override
-//                public boolean onQueryTextSubmit(String query) {
-//                    return false;
-//                }
-//
-//                @Override
-//                public boolean onQueryTextChange(String newText) {
-////                    filterList(newText);
-//                    return true;
-//                }
-//            });
-
-
-            searchbox.addTextChangedListener(new TextWatcher() {
+            database.collection("AllProducts").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                 @Override
-                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-                }
-
-                @Override
-                public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-                }
-
-                @Override
-                public void afterTextChanged(Editable editable) {
-                        if(editable.toString().isEmpty()){
-                            viewallModellist.clear();
+                public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                    if (task.isSuccessful()){
+                        for(DocumentSnapshot documentSnapshot : task.getResult().getDocuments()){
+                            String document_id = documentSnapshot.getId();
+                            viewallModel viewallModel = documentSnapshot.toObject(com.kandyvilla.kandyvillathefashionstore.models.viewallModel.class);
+                            viewallModel.setDocument_id(document_id);
+                            viewallModellist.add(viewallModel);
                             viewallAdapter.notifyDataSetChanged();
                         }
-                        else
-                        {
-                            searchProduct(editable.toString());
-                        }
+                    }
+                    else{
+                        Toast.makeText(getContext(), "Error :"+task.getException(), Toast.LENGTH_SHORT).show();
+                    }
                 }
             });
 
+            searchbox = root.findViewById(R.id.searchbox);
+            recyclerView = root.findViewById(R.id.searchbox_items);
+
+            recyclerView.setLayoutManager(new GridLayoutManager(getContext(),2));
+            searchbox.clearFocus();
+            searchbox.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+                @Override
+                public boolean onQueryTextSubmit(String newtext) {
+                    filteredList(newtext);
+                    return true;
+                }
+
+                @Override
+                public boolean onQueryTextChange(String newtext) {
+                    filteredList(newtext);
+                    return true;
+                }
+            });
 
         return root;
     }
 
-//    private void filterList(String text) {
-//            List<viewallModel> filteredList = new ArrayList<>();
-//
-//            for(viewallModel item : viewallModellist)
-//            {
-//                if(item.getName().toLowerCase(Locale.ROOT).contains(text.toLowerCase(Locale.ROOT))){
-//                    filteredList.add(item);
-//                }
-//            }
-//
-//            if(filteredList.isEmpty())
-//            {
-//                Toast.makeText(getContext(), "Oops....", Toast.LENGTH_SHORT).show();
-//            }
-//            else
-//            {
-//                viewallAdapter.setfilteredList(filteredList);
-//            }
-//    }
+    private void filteredList(String newtext) {
+            if (newtext.isEmpty()){
+                recyclerView.setVisibility(View.GONE);
+            }
+            else{
+                recyclerView.setVisibility(View.VISIBLE);
+                List<viewallModel> filteredList = new ArrayList<>();
 
-    private void searchProduct(String name) {
-            if(!name.toLowerCase(Locale.ROOT).isEmpty()){
-                database.collection("AllProducts").whereEqualTo("name",name).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if(task.isSuccessful() && task.getResult() != null)
-                        {
-                            viewallModellist.clear();
-                            viewallAdapter.notifyDataSetChanged();
-
-                            for(DocumentSnapshot documentSnapshot : task.getResult().getDocuments())
-                            {
-                                viewallModel viewallModel = documentSnapshot.toObject(com.kandyvilla.kandyvillathefashionstore.models.viewallModel.class);
-                                viewallModellist.add(viewallModel);
-                                viewallAdapter.notifyDataSetChanged();
-                            }
-                        }
+                for(viewallModel viewallModel:viewallModellist){
+                    if (viewallModel.getName().toLowerCase().contains(newtext.toLowerCase())){
+                        filteredList.add(viewallModel);
                     }
-                });
+                    recyclerView.setAdapter(viewallAdapter);
+                }
+                if(filteredList.isEmpty()){
+                    viewallModellist.clear();
+                    Toast.makeText(getContext(), "No Data Found !", Toast.LENGTH_SHORT).show();
+                }
+
+                else{
+                    viewallAdapter.setfilteredList(filteredList);
+                }
             }
     }
 
